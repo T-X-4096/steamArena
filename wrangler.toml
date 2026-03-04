@@ -1,0 +1,21 @@
+name = "cfweb-admin-worker"
+main = "worker/index.js"
+compatibility_date = "2024-01-01"
+
+# Routes — Worker handles /api/admin/* on your Pages domain
+# Replace YOUR_ZONE_ID and your-domain.com with your actual values.
+[[routes]]
+pattern = "your-domain.com/api/admin/*"
+zone_name = "your-domain.com"
+
+# ─── Secrets (set via CLI, never in this file) ────────────────────────────────
+# Run these commands after deploying:
+#
+#   wrangler secret put SUPABASE_URL
+#   wrangler secret put SUPABASE_ANON_KEY
+#   wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+#
+# These are injected as env.* inside the Worker at runtime.
+
+[vars]
+# Non-secret vars can go here (none needed currently)

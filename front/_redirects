@@ -1,0 +1,8 @@
+# _redirects — Cloudflare Pages routing
+# Place this file in the front/ directory (your Pages build output root).
+
+# Route /admin to admin.html (no trailing slash issues)
+/admin  /admin.html  200
+
+# Fallback: serve index.html for unknown paths (SPA-style)
+/*  /index.html  200

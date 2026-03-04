@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esports Platform</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="nav container">
+            <a class="logo" href="#">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ESPORTS</span>
+            </a>
+
+            <nav class="nav-links desktop-only">
+                <a class="nav-link" href="#hero">Home</a>
+                <a class="nav-link" href="#streams">Streams</a>
+                <a class="nav-link" href="#teams">Teams</a>
+                <a class="nav-link" href="#tournaments">Tournaments</a>
+                <a class="nav-link" href="#news">News</a>
+            </nav>
+
+            <button id="menuBtn" class="menu-btn mobile-only">☰</button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu">
+            <div class="mobile-menu-links">
+                <a class="mobile-link" href="#hero">Home</a>
+                <a class="mobile-link" href="#streams">Streams</a>
+                <a class="mobile-link" href="#teams">Teams</a>
+                <a class="mobile-link" href="#tournaments">Tournaments</a>
+                <a class="mobile-link" href="#news">News</a>
+            </div>
+        </div>
+    </header>
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="hero">
+        <div id="heroBackground" class="hero-background"></div>
+
+        <div class="hero-content container">
+            <div class="hero-main">
+                <div class="hero-badges">
+                    <span id="heroStatus" class="badge live-badge"></span>
+                    <span id="heroGame" class="badge game-badge"></span>
+                </div>
+
+                <h1 id="heroTitle" class="hero-title"></h1>
+
+                <div class="hero-teams">
+                    <span id="team1" class="team"></span>
+                    <span class="vs">VS</span>
+                    <span id="team2" class="team"></span>
+                </div>
+
+                <div class="hero-stats">
+                    <span>👁 <span id="heroViewers"></span></span>
+                    <span>⏱ <span id="heroTime"></span></span>
+                </div>
+
+                <div class="hero-actions">
+                    <button id="heroWatchBtn" class="btn btn-primary">▶ Watch Live</button>
+                    <button id="heroDetailsBtn" class="btn btn-outline">Details</button>
+                </div>
+            </div>
+
+            <aside class="hero-sidebar">
+                <h3>Featured Streams</h3>
+                <div id="featuredStreams" class="featured-streams"></div>
+            </aside>
+        </div>
+
+        <div id="heroIndicators" class="hero-indicators"></div>
+    </section>
+
+    <!-- ================= LIVE STREAMS ================= -->
+    <section id="streams" class="section live-streams">
+        <div class="container">
+            <h2 class="section-title">Live Streams</h2>
+            <div id="streamsGrid" class="streams-grid"></div>
+        </div>
+    </section>
+
+    <!-- ================= TEAMS ================= -->
+    <section id="teams" class="section teams-section">
+        <div class="container">
+            <h2 class="section-title">Top Teams</h2>
+            <div id="teamsGrid" class="teams-grid"></div>
+        </div>
+    </section>
+
+    <!-- ================= TOURNAMENTS ================= -->
+    <section id="tournaments" class="section tournaments-section">
+        <div class="container">
+            <h2 class="section-title">Tournaments</h2>
+            <div id="featuredTournament" class="featured-tournament"></div>
+            <div id="tournamentsGrid" class="tournaments-grid"></div>
+        </div>
+    </section>
+
+    <!-- ================= NEWS ================= -->
+    <section id="news" class="section news-section">
+        <div class="container news-layout">
+            <div>
+                <h2 class="section-title">Latest News</h2>
+                <div id="newsArticles" class="news-articles"></div>
+            </div>
+            <aside>
+                <h3>Highlights</h3>
+                <div id="highlightsList" class="highlights-list"></div>
+            </aside>
+        </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

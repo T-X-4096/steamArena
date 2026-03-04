@@ -1,0 +1,101 @@
+-- Teams
+CREATE TABLE IF NOT EXISTS teams (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name TEXT NOT NULL,
+  logo TEXT NOT NULL,
+  game TEXT NOT NULL,
+  rank INTEGER NOT NULL,
+  region TEXT NOT NULL,
+  win_rate TEXT NOT NULL,
+  total_wins TEXT NOT NULL,
+  recent_form BOOLEAN[] NOT NULL DEFAULT '{}',
+  prize TEXT NOT NULL,
+  followers TEXT NOT NULL,
+  trending BOOLEAN NOT NULL DEFAULT false,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Featured Streams
+CREATE TABLE IF NOT EXISTS featured_streams (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title TEXT NOT NULL,
+  game TEXT NOT NULL,
+  team1_name TEXT NOT NULL,
+  team1_logo TEXT NOT NULL,
+  team2_name TEXT NOT NULL,
+  team2_logo TEXT NOT NULL,
+  viewers TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'UPCOMING',
+  thumbnail TEXT NOT NULL,
+  time_left TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Live Streams
+CREATE TABLE IF NOT EXISTS live_streams (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title TEXT NOT NULL,
+  game TEXT NOT NULL,
+  streamer TEXT NOT NULL,
+  viewers TEXT NOT NULL,
+  thumbnail TEXT NOT NULL,
+  category TEXT NOT NULL,
+  language TEXT NOT NULL DEFAULT 'EN',
+  duration TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- News Articles
+CREATE TABLE IF NOT EXISTS news_articles (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title TEXT NOT NULL,
+  excerpt TEXT NOT NULL,
+  author TEXT NOT NULL,
+  published_at TEXT NOT NULL,
+  read_time TEXT NOT NULL,
+  thumbnail TEXT NOT NULL,
+  category TEXT NOT NULL,
+  trending BOOLEAN NOT NULL DEFAULT false,
+  views TEXT NOT NULL,
+  comments INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Highlights
+CREATE TABLE IF NOT EXISTS highlights (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title TEXT NOT NULL,
+  game TEXT NOT NULL,
+  player TEXT NOT NULL,
+  team TEXT NOT NULL,
+  duration TEXT NOT NULL,
+  views TEXT NOT NULL,
+  thumbnail TEXT NOT NULL,
+  trending BOOLEAN NOT NULL DEFAULT false,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Tournaments
+CREATE TABLE IF NOT EXISTS tournaments (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name TEXT NOT NULL,
+  game TEXT NOT NULL,
+  start_date TIMESTAMPTZ NOT NULL,
+  location TEXT NOT NULL,
+  prize_pool TEXT NOT NULL,
+  teams INTEGER NOT NULL,
+  format TEXT NOT NULL,
+  organizer TEXT NOT NULL,
+  thumbnail TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'TBD',
+  featured BOOLEAN NOT NULL DEFAULT false,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Disable RLS on all tables
+ALTER TABLE teams DISABLE ROW LEVEL SECURITY;
+ALTER TABLE featured_streams DISABLE ROW LEVEL SECURITY;
+ALTER TABLE live_streams DISABLE ROW LEVEL SECURITY;
+ALTER TABLE news_articles DISABLE ROW LEVEL SECURITY;
+ALTER TABLE highlights DISABLE ROW LEVEL SECURITY;
+ALTER TABLE tournaments DISABLE ROW LEVEL SECURITY;
