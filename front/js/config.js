@@ -3,8 +3,8 @@
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
-const SUPABASE_URL     = window.__SUPABASE_URL__
-const SUPABASE_ANON_KEY = window.__SUPABASE_ANON_KEY__
+const SUPABASE_URL     = 'https://tslyqafnmvikwzgcvcgy.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzbHlxYWZubXZpa3d6Z2N2Y2d5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2MjAzNDgsImV4cCI6MjA4ODE5NjM0OH0.ZfA_hLk6q3S_2MjVpKu27rhTolR9mqUrmEpdTDBpqoA'
 
 if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
     console.error(
